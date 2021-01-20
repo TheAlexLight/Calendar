@@ -29,3 +29,8 @@ E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Razor
 E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Calendar.RazorTargetAssemblyInfo.cs
 E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Calendar.Views.pdb
 E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Calendar.csproj.CopyComplete
+E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\bin\Debug\netcoreapp3.1\libman.json
+E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs

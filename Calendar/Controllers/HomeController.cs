@@ -12,5 +12,10 @@ namespace Calendar.Controllers
         {
             return View();
         }
+
+        public ViewResult Details()
+        {
+            return View();
+        }
     }
 }

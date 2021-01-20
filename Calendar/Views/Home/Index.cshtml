@@ -1,11 +1,15 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>
-        Calendar
-    </title>
-</head>
-<body>
-    <h2> Calendar text</h2>
-    <p style="text-align: center"><button>Отметиться</button>
-</body>
-</html>
+﻿@{
+    ViewBag.Title = "Calendar page";
+}
+
+    <div class="card">
+        <div class="card-footer text-center">
+            <a asp-controller="home" asp-action="index" class="btn btn-primary">Check in</a>
+            <a asp-controller="home" asp-action="details" class="btn btn-primary">Details</a>
+        </div>
+    </div>
+
+@section Scripts
+{
+        <script src="~/js/CustomScript.js"></script>
+}
