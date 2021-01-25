@@ -2,14 +2,32 @@
     ViewBag.Title = "Calendar page";
 }
 
-    <div class="card">
-        <div class="card-footer text-center">
-            <a asp-controller="home" asp-action="index" class="btn btn-primary">Check in</a>
-            <a asp-controller="home" asp-action="details" class="btn btn-primary">Details</a>
-        </div>
+<div class="card">
+    <div class="card-footer text-center">
+        <div><a asp-controller="home" asp-action="index" class="btn btn-primary">Check in</a></div>
+        <div><a asp-controller="home" asp-action="details" class="btn btn-primary">Details</a></div>
     </div>
+</div>
+
+
+
+@*<div class="row">
+        <div class=" = col-6">
+            <a href="~/images/background-image.png">
+                <figure class="figure">
+                    <figcaption class="figure-caption">Image1</figcaption>
+                    <img src="~/images/background-image.png" class="figure-img img-fluid rounded">
+                </figure>
+            </a>
+        </div>
+    </div>*@
+
+
+
+
+
 
 @section Scripts
 {
-        <script src="~/js/CustomScript.js"></script>
+    <script src="~/js/CustomScript.js"></script>
 }
