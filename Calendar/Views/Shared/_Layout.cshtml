@@ -7,7 +7,8 @@
         <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
         <script src="~/lib/jquery/jquery.js"></script>
         <script src="~/lib/bootstrap/js/bootstrap.js"></script>
-    </environment> 
+
+    </environment>
     <environment exclude="Development">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
@@ -30,10 +31,15 @@
                 asp-fallback-test="window.jQuery"></script>
     </environment>
     <title>@ViewBag.Title</title>
+
+    @if (IsSectionDefined("Head"))
+    {
+        @RenderSection("Head", required: true)
+    }
 </head>
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        @*<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" asp-controller="Home" asp-action="Index">
                 <img src="~/images/icon1.png" height="50" width="50" />
             </a>
@@ -54,7 +60,7 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
-        </nav>
+        </nav>*@
         @RenderBody()
     </div>
     @if (IsSectionDefined("Scripts"))

@@ -27,7 +27,7 @@ namespace Calendar.Models
         public ChooseDate CheckIn(DateTime date)
         {
             _dataList.FirstOrDefault(d => DateTime.Compare(date, d.SelectedDay) == 0).IsSelected = true;
-            return _dataList.FirstOrDefault(d=> DateTime.Compare(date,d.SelectedDay) == 0);
+            return _dataList.FirstOrDefault(d => DateTime.Compare(date, d.SelectedDay) == 0);
         }
     }
 }

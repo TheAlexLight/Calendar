@@ -1,35 +1,49 @@
 ﻿@*Calendar.Models.ChooseDate*@
-@model IEnumerable<ChooseDate> 
+@model IEnumerable<ChooseDate>
 
 @{
     ViewBag.Title = "Calendar details page";
 }
 
-<div class="card">
-    <div class="card-footer text-center">
-        <a asp-controller="home" asp-action="index" class="btn btn-primary">Back</a>
+@section Head
+{
+    <link href="~/css/StyleDetails.css" rel="stylesheet" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+          integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+          crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" 
+          rel="stylesheet">
+}
+
+<div class="container">
+    <div class="calendar">
+        <div class="month">
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">
+                <h1></h1>
+                <p></p>
+            </div>
+            <i class="fas fa-angle-right next"></i>
+        </div>
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="days">
+            <div class="prev-date"></div>
+            <div></div>
+            <div class="next-date"></div>
+        </div>
     </div>
 </div>
 
-<table>
-    <thead>
-        <tr>
-            <th>Data</th>
-            <th>IsChecked</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var day in Model)
-        {
-        <tr>
-            <td>@day.SelectedDay</td>
-            <td>@day.IsSelected</td>
-        </tr>
-        }
-    </tbody>
-</table>
-
 @section Scripts
 {
-    <script src="~/js/CustomScript.js"></script>
+    <script src="~/js/CustomScript.js" asp-append-version="true"></script>
 }
