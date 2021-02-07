@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UDBDkfrlyhyAb8v8stVVmaiXkmgxGb/EgiLe0f8nzFrm+DRKw/4R9cS/WYpu8lzqU+mao2uSCu+CdfHRs+QYCw==",
+  "dgSpecHash": "dSTT7CWwwL13IW6ACT50KlvLlHOa0IPIloYBqjsfUYf6CeeVRuiwY23v5DevC5MHuEBWZSZenvta27ZrPxrkQQ==",
   "success": true,
   "projectFilePath": "E:\\Sasha\\Programming\\ASP.NetCore\\Calendar\\Calendar\\Calendar.csproj",
   "expectedPackageFiles": [
@@ -97,9 +97,7 @@
     "C:\\Users\\Александр\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Александр\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Александр\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\Александр\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\Александр\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512"
+    "C:\\Users\\Александр\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

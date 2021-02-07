@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width">
     <environment include="Development">
         <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
         <script src="~/lib/jquery/jquery.js"></script>
@@ -38,7 +38,7 @@
     }
 </head>
 <body>
-    <div class="container">
+    @*<div class="container">*@
         @*<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" asp-controller="Home" asp-action="Index">
                 <img src="~/images/icon1.png" height="50" width="50" />
@@ -62,7 +62,7 @@
             </div>
         </nav>*@
         @RenderBody()
-    </div>
+    @*</div>*@
     @if (IsSectionDefined("Scripts"))
     {
         @RenderSection("Scripts", required: true)
