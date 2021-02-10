@@ -26,8 +26,9 @@ namespace Calendar
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContextPool<CalendarDbContext>(options => options.UseSqlServer(_config.GetConnectionString("CalendarDbConnection")));
+
             services.AddMvc(options => options.EnableEndpointRouting = false);
-            services.AddSingleton<ICalendar, CalendarImplementation>();
+            services.AddScoped<ICalendar, SQLCalendarRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,7 +14,9 @@ namespace Calendar.Models
         //public string Text { get; set; }
         //public string Color { get; set; }
 
-        public DateTime SelectedDay { get; set; }
+        [Key]
+        public DateTime SelectedDate { get; set; }
+        //public List<ChooseDate> listOfDates { get; set; }
         public bool IsSelected { get; set; }
     }
 }

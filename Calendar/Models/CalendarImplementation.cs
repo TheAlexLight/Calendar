@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Calendar.Models
 {
-    public class CalendarImplementation : ICalendar
+    public class CalendarImplementation /*: ICalendar*/
     {
         private readonly List<ChooseDate> _dataList;
 
@@ -13,9 +13,9 @@ namespace Calendar.Models
         {
             _dataList = new List<ChooseDate>
             {
-                new ChooseDate{SelectedDay = new DateTime(2020, 06, 26), IsSelected = false},
-                new ChooseDate{SelectedDay = new DateTime(2020, 06, 25), IsSelected = false},
-                new ChooseDate{SelectedDay = new DateTime(2020, 06, 24), IsSelected = false}
+                new ChooseDate{SelectedDate = new DateTime(2020, 06, 26), IsSelected = false},
+                new ChooseDate{SelectedDate = new DateTime(2020, 06, 25), IsSelected = true},
+                new ChooseDate{SelectedDate = new DateTime(2020, 06, 24), IsSelected = false}
             };
         }
 
@@ -24,10 +24,16 @@ namespace Calendar.Models
             return _dataList;
         }
 
-        public ChooseDate CheckIn(DateTime date)
+        public ChooseDate CheckIn(/*DateTime*/ChooseDate date)
         {
-            _dataList.FirstOrDefault(d => DateTime.Compare(date, d.SelectedDay) == 0).IsSelected = true;
-            return _dataList.FirstOrDefault(d => DateTime.Compare(date, d.SelectedDay) == 0);
+            //_dataList.FirstOrDefault(d => DateTime.Compare(date, d.SelectedDate) == 0).IsSelected = true;
+            //return _dataList.FirstOrDefault(d => DateTime.Compare(date, d.SelectedDate) == 0);
+            throw new NotImplementedException();
+        }
+
+        public int GetMonthDate(DateTime date)
+        {
+            return DateTime.DaysInMonth(date.Year, date.Month);
         }
     }
 }

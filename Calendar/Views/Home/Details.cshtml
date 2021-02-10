@@ -37,13 +37,20 @@
         </div>
         <div class="days">
             <div class="prev-date"></div>
-            <div></div>
+            <div>
+                @foreach (var item in Model)
+                {
+                    <div>@item.SelectedDate</div>
+                    <div>@item.IsSelected</div>
+
+                }
+                    </div>
             <div class="next-date"></div>
         </div>
     </div>
 </div>
 
-@section Scripts
+@*@section Scripts
 {
     <script src="~/js/ScriptDetails.js" asp-append-version="true"></script>
-}
+}*@

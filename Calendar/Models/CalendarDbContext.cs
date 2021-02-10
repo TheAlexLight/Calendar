@@ -12,6 +12,6 @@ namespace Calendar.Models
         {
         }
 
-        public DbSet<ChooseDate> Event { get; set; }
+        public DbSet<ChooseDate> Calendars { get; set; }
     }
 }
