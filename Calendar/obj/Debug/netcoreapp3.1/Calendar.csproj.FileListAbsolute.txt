@@ -77,3 +77,10 @@ E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\scope
 E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details2.cshtml.g.cs
 E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\bin\Debug\netcoreapp3.1\Humanizer.dll
 E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs

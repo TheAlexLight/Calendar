@@ -23,7 +23,7 @@ const renderCalendar = (pDate) =>
 
     const lastDayIndex = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
 
-    const nexDays = 7 - lastDayIndex - 1;
+    const nextDays = 7 - lastDayIndex - 1;
 
     const months =
         [
@@ -84,7 +84,7 @@ const renderCalendar = (pDate) =>
     }
 
 
-    for (let j = 1; j <= nexDays; j++) {
+    for (let j = 1; j <= nextDays; j++) {
         days += `<div class = "next-date">${j}</div>`;
     }
 

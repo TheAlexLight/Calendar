@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -30,6 +33,13 @@
                 asp-fallback-src="~/lib/jquery/jquery.min.js"
                 asp-fallback-test="window.jQuery"></script>
     </environment>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+          integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+          crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link href="~/css/StyleDetails.css" rel="stylesheet" asp-append-version="true" />
     <title>@ViewBag.Title</title>
 
     @if (IsSectionDefined("Head"))
@@ -39,29 +49,52 @@
 </head>
 <body>
     @*<div class="container">*@
-        @*<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                <img src="~/images/icon1.png" height="50" width="50" />
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#CollapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="CollapsibleNavbar">
-                <ul class="navbar-nav mr-auto">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+            <img src="~/images/icon1.png" height="50" width="50" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#CollapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="CollapsibleNavbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a asp-controller="home" asp-action="index" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="#" asp-action="#" class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav mr-5">
+                @if (signInManager.IsSignedIn(User))
+                {
                     <li class="nav-item">
-                        <a asp-controller="home" asp-action="index" class="nav-link">Home</a>
+                        <form method="post" asp-controller="account" asp-action="logout">
+                            <button type="submit" class="nav-link btn btn-link py-0"
+                                    style="width:auto">
+                                Logout @User.Identity.Name
+                            </button>
+                        </form>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a asp-controller="Account" asp-action="Register" class="nav-link">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a asp-controller="#" asp-action="#" class="nav-link disabled">Disabled</a>
+                        <a asp-controller="account" asp-action="login" class="nav-link">Login</a>
                     </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
+                }
+
+            </ul>
+            @*<form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>*@
-        @RenderBody()
+                </form>*@
+        </div>
+    </nav>
+    @RenderBody()
     @*</div>*@
     @if (IsSectionDefined("Scripts"))
     {

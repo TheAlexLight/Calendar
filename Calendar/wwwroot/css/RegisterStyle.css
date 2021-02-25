@@ -1,0 +1,60 @@
+﻿html {
+    font-size: 62.5%; /*10px*/
+}
+
+body
+{
+    color:#ffffff;
+}
+
+.row
+{
+    max-width:100rem;
+    width:100%;
+    font-size: 1.5rem;
+    /*display:flex;
+    justify-content:center;
+    align-items:center;*/
+}
+
+.form-group {
+    margin: 2rem 0.5rem;
+    /*width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;*/
+}
+.label {
+    /*margin:0 2rem 0 10rem*/
+    /*padding: 2rem 2rem;*/
+}
+
+.btn-primary {
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+    font-size:2rem;
+    /*text-align:center;*/
+}
+
+.checkbox
+{
+    /*width:auto;*/
+    display:flex;
+    /*justify-content:left;*/
+    /*align-items:center;*/
+}
+
+.label {
+    display: flex;
+    /*justify-content: left;*/
+    align-items:center;
+/*    margin: 2rem 2rem;*/
+    width:15rem;
+    white-space:nowrap;
+}
+
+.form-control
+{
+/*margin: 0.2rem 0.2rem;*/
+}

@@ -8,47 +8,123 @@
 @section Head
 {
     <link href="~/css/StyleDetails.css" rel="stylesheet" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-          integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-          crossorigin="anonymous" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" 
-          rel="stylesheet">
 }
 
-<div class="container">
-    <div class="calendar">
-        <div class="month">
-            <i class="fas fa-angle-left prev"></i>
-            <div class="date">
-                <h1></h1>
-                <p></p>
-            </div>
-            <i class="fas fa-angle-right next"></i>
-        </div>
-        <div class="weekdays">
-            <div>Sun</div>
-            <div>Mon</div>
-            <div>Tue</div>
-            <div>Wed</div>
-            <div>Thu</div>
-            <div>Fri</div>
-            <div>Sat</div>
-        </div>
-        <div class="days">
-            <div class="prev-date"></div>
-            <div>
-                @foreach (var item in Model)
-                {
-                    <div>@item.SelectedDate</div>
-                    <div>@item.IsSelected</div>
 
+
+<div class="container">
+        <div class="calendar">
+            <div class="card">
+                <div class="card-footer text-center">
+                    @{var todayDate = Model.Where(d => d.SelectedDate.Day == DateTime.Today.Day).FirstOrDefault(); }
+                    @{
+                        if (todayDate.SelectedDate.Month == DateTime.Today.Month &&
+                                    todayDate.SelectedDate.Year == DateTime.Today.Year && todayDate.IsSelected == false)
+                        {
+                            <div><a asp-controller="home" asp-action="checkDay" class="btn btn-success">Check in</a></div>
+                        }
+                        else if (todayDate.SelectedDate.Month == DateTime.Today.Month &&
+                        todayDate.SelectedDate.Year == DateTime.Today.Year && todayDate.IsSelected == true)
+                        {
+                            <div><a asp-controller="home" asp-action="checkDay" class="btn btn-disabled">Marked day</a></div>
+                        }
+
+                        else
+                        {
+                            <div><a asp-controller="home" asp-action="checkDay" class="btn btn-success">Check in</a></div>
+                        }
+                    }
+                </div>
+                        </div>
+            <div class="month">
+                <form method="post">
+                    <button name="ch_month" value="@(new DateTime(Model.FirstOrDefault().SelectedDate.Year,
+Model.FirstOrDefault().SelectedDate.Month,
+1).AddMonths(-1))" asp-controller="home" asp-action="changeMonth" class="btn-prev">
+                        <i class="fas fa-angle-left prev"></i>
+                    </button>
+                </form>
+                <div class="date">
+                    <h1>@Model.FirstOrDefault().SelectedDate.ToString("MMMM", System.Globalization.CultureInfo.GetCultureInfo("en-us"))</h1>
+
+                    @{ if (todayDate.SelectedDate.Year == DateTime.Today.Year &&
+                           todayDate.SelectedDate.Month == DateTime.Today.Month)
+                        {
+                                        <p>@DateTime.Today.ToString("ddd MMM dd yyyy", System.Globalization.CultureInfo.GetCultureInfo("en-us"))</p>
+                        }
+                        else
+                        {
+                                        <p>@(new DateTime(todayDate.SelectedDate.Year, todayDate.SelectedDate.Month, 1).ToString("ddd MMM dd yyyy", System.Globalization.CultureInfo.GetCultureInfo("en-us")))</p>
+                        }
+                    }
+                    
+                </div>
+                <form method="post">
+                    <button name="ch_month" value="@(new DateTime(Model.FirstOrDefault().SelectedDate.Year,
+                                             Model.FirstOrDefault().SelectedDate.Month,
+                                             1).AddMonths(1))" asp-controller="home" asp-action="changeMonth" class="btn-next">
+                        <i class="fas fa-angle-right next"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="days">
+                @for (int i = (int)Model.FirstOrDefault().SelectedDate.DayOfWeek; i > 0; i--)
+                {
+                    <div class="prev-date">@(DateTime.DaysInMonth(Model.FirstOrDefault().SelectedDate.Year, Model.FirstOrDefault().SelectedDate.AddMonths(-1).Month) - i + 1)</div>
                 }
-                    </div>
-            <div class="next-date"></div>
+
+                @foreach (var date in Model)
+                {
+                    if (date.IsSelected == true)
+                    {
+                        
+                            @if (date.SelectedDate.Day == DateTime.Today.Day && date.SelectedDate.Month == DateTime.Today.Month && date.SelectedDate.Year == DateTime.Today.Year)
+                            {
+                                <div class="today">
+                                    <div class="selected" style="border:none">
+                                        @date.SelectedDate.Day
+                                        <i class="fas fa-check check"></i>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+            <div class="selected">
+                @date.SelectedDate.Day
+                <i class="fas fa-check check"></i>
+            </div>
+                            }
+    
+
+    }
+    else if (date.SelectedDate.Day == DateTime.Today.Day && date.SelectedDate.Month == DateTime.Today.Month && date.SelectedDate.Year == DateTime.Today.Year)
+    {
+    <div class="today">@date.SelectedDate.Day</div>
+    }
+    else
+    {
+    <div>@date.SelectedDate.Day</div>
+    }
+    }
+
+    @for (int i = 1; i < 7 - (int)new DateTime(Model.FirstOrDefault().SelectedDate.Year, Model.FirstOrDefault().SelectedDate.AddMonths(1).Month, 1).DayOfWeek + 1@*
+    *@; i++)
+   {
+    <div class="next-date">@i</div>
+}
+
+</div>
         </div>
     </div>
-</div>
 
 @*@section Scripts
 {

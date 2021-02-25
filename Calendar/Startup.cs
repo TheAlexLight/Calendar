@@ -6,6 +6,7 @@ using Calendar.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -16,7 +17,7 @@ namespace Calendar
 {
     public class Startup
     {
-        private IConfiguration _config;
+        private readonly IConfiguration _config;
         public Startup(IConfiguration config)
         {
             _config = config;
@@ -26,6 +27,9 @@ namespace Calendar
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContextPool<CalendarDbContext>(options => options.UseSqlServer(_config.GetConnectionString("CalendarDbConnection")));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<CalendarDbContext>();
 
             services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddScoped<ICalendar, SQLCalendarRepository>();
@@ -40,6 +44,9 @@ namespace Calendar
             }
 
             app.UseStaticFiles();
+
+            app.UseAuthentication();
+
             app.UseMvcWithDefaultRoute();
         }
     }

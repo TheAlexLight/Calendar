@@ -17,28 +17,41 @@ namespace Calendar.Controllers
         }
         public ViewResult Index()
         {
+            //var model = _calendar.CheckAllDates(new ChooseDate() { IsSelected = true, SelectedDate = new DateTime(2021, 2, 1) }.SelectedDate);
+            ViewBag.PageTitle = "Calendar index page";
+            //return View(model);
             return View();
         }
-
         public ViewResult Details() 
         {
-            //ChooseDate model = _calendar.CheckIn(new DateTime(2020, 06, 25));
-            var model = new List<ChooseDate>(); 
-            _calendar.AddMonth(new ChooseDate() { IsSelected = true, SelectedDate = new DateTime(2021, 2, 5) });
+            var model = _calendar.CheckAllDates(new ChooseDate() { IsSelected = true, SelectedDate = new DateTime(2021, 2, 1) }.SelectedDate);
             ViewBag.PageTitle = "Calendar details page";
              return View(model);
         }
+        [HttpPost]
+        public ViewResult ChangeMonth(DateTime ch_month)
+        {
+            var model = _calendar.CheckAllDates(new ChooseDate() { IsSelected = true, SelectedDate = new DateTime(ch_month.Year, ch_month.Month, ch_month.Day) }.SelectedDate);
+            ViewBag.PageTitle = "Calendar Details page";
+
+            return View("~/Views/Home/Details.cshtml", model);
+            //return View();
+        }
+        public IActionResult CheckDay()
+        {
+           /* var model = */_calendar.CheckIn(new ChooseDate {SelectedDate = DateTime.Today , IsSelected = true});
+            ViewBag.PageTitle = "Calendar Details page";
+
+            return RedirectToAction("Details");
+            //return View("~/Views/Home/Details.cshtml", model);
+            //return View();
+        }
+
+
+
         public ViewResult Details2()
         {
-            //ChooseDate model = _calendar.CheckIn(new DateTime(2020, 06, 25));
-            //var model = _calendar.GetMonthDate(new DateTime(2020, 02, 7));
-            //var model = _calendar.CheckAllDates(new ChooseDate() { IsSelected = true, SelectedDate = new DateTime(2021, 2, 5) }.SelectedDate);
-            HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
-            {
-                CalendarDate = _calendar.CheckAllDates(new ChooseDate() { IsSelected = true, SelectedDate = new DateTime(2021, 2, 5) }.SelectedDate)
-            };
-            ViewBag.PageTitle = "Calendar details2 page";
-            return View(homeDetailsViewModel);
+            return View();
         }
     }
 }
