@@ -1,13 +1,11 @@
 ﻿using Calendar.Models;
-using Calendar.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Calendar.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ICalendar _calendar;
@@ -15,6 +13,7 @@ namespace Calendar.Controllers
         {
             _calendar = calendar;
         }
+        [AllowAnonymous]
         public ViewResult Index()
         {
             //var model = _calendar.CheckAllDates(new ChooseDate() { IsSelected = true, SelectedDate = new DateTime(2021, 2, 1) }.SelectedDate);
