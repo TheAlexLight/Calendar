@@ -23,7 +23,7 @@ namespace Calendar.Controllers
         }
         public ViewResult Details() 
         {
-            var model = _calendar.CheckAllDates(new ChooseDate() { IsSelected = true, SelectedDate = new DateTime(2021, 2, 1) }.SelectedDate);
+            var model = _calendar.CheckAllDates(new ChooseDate() { SelectedDate = DateTime.Today}.SelectedDate);
             ViewBag.PageTitle = "Calendar details page";
              return View(model);
         }
