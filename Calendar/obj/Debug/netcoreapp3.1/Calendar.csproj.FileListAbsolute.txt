@@ -85,3 +85,4 @@ E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\bin\Debug\netcoreapp3.1\Micro
 E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Razor\Views\Administration\CreateRole.cshtml.g.cs
+E:\Sasha\Programming\ASP.NetCore\Calendar\Calendar\obj\Debug\netcoreapp3.1\Razor\Views\Administration\ListRoles.cshtml.g.cs

@@ -58,3 +58,28 @@ body
 {
 /*margin: 0.2rem 0.2rem;*/
 }
+
+.card {
+    max-width: 100rem;
+    width: 100%;
+    height: auto;
+    background-color: #808080;
+    /*display: flex;*/
+    flex-direction: column;
+    display: block;
+    align-items: center;
+    justify-content: left;
+    font-size: 2rem;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: black;
+}
+
+.card-title
+{
+    font-size:2rem;
+}

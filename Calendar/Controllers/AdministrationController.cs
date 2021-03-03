@@ -36,7 +36,7 @@ namespace Calendar.Controllers
 
                 if (result.Succeeded)
                 {
-                    RedirectToAction("index", "home");
+                    return RedirectToAction("ListRoles", "Administration");
                 }
 
                 foreach (var error in result.Errors)
@@ -47,5 +47,13 @@ namespace Calendar.Controllers
 
             return View(model);
         }
+
+        [HttpGet]
+        public IActionResult ListRoles()
+        {
+            var roles = roleManager.Roles;
+            return View(roles);
+        }
     }
+
 }
