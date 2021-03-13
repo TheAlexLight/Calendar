@@ -5,16 +5,12 @@
     ViewBag.Title = "Calendar details page";
 }
 
-@section Head
-{
-    <link href="~/css/StyleDetails.css" rel="stylesheet" asp-append-version="true" />
-}
 
 
 
 <div class="container">
         <div class="calendar">
-            <div class="card">
+            <div class="card" style="max-width:none">
                 <div class="card-footer text-center">
                     @{var todayDate = Model.Where(d => d.SelectedDate.Day == DateTime.Today.Day).FirstOrDefault(); }
                     @{
